@@ -31,6 +31,7 @@ class Rollout
   end
 
   def active?(feature, user)
+    return false if user.nil?
     user_in_active_group?(feature, user) ||
       user_active?(feature, user) ||
         user_within_active_percentage?(feature, user)

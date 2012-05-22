@@ -179,4 +179,10 @@ describe "Rollout" do
       end
     end
   end
+
+  describe "#active?" do
+    it "should return false and not raise when user is nil" do
+      @rollout.active?(:chat, nil).should be_false
+    end
+  end
 end
